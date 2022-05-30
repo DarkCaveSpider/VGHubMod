@@ -286,12 +286,48 @@ local Section6 = Tab3:CreateSection("Exclusions")
 
 local GladeDoors = game:GetService("Workspace").Map.Glade.Doors
 local DToggle = Section5:CreateToggle("Doors Enabled", true, function(State)
+  getgenv().DDoors = State
   if State == true then
     GladeDoors.Parent = game:GetService("Workspace").Map.Glade
   elseif State == false then
     GladeDoors.Parent = DarkStorage
   end
 end)
+local DToggle = Section5:CreateToggle("Wall Noclip", nil, function(State)
+  getgenv().DWalls = State
+  for i, v in pairs(game:GetService("Workspace").Map.Maze:GetDescendants()) do
+      if v:IsA("BasePart") and v.BrickColor.Name:match("stone") then
+          if getgenv().DWalls then
+              v.CanCollide = false
+          else
+              v.CanCollide = true
+          end
+      end
+  end
+end)
+local DToggle = Section5:CreateToggle("Wall ", nil, function(State)
+  getgenv().DWallss = State
+  for i, v in pairs(game:GetService("Workspace").Map.Maze:GetDescendants()) do
+      if v:IsA("BasePart") and v.BrickColor.Name:match("stone") then
+          if getgenv().DWallss then
+              v.Transparency = 1
+          else
+              v.Transparency = 0
+          end
+      end
+  end
+end)
+for i, v in pairs(game:GetService("Workspace").Map.Maze:GetDescendants()) do
+    if v:IsA("BasePart") and v.BrickColor.Name:match("stone") then
+        if getgenv().Trapss then
+            v.Transparency = 1
+            v.CanCollide = false
+        else
+            v.Transparency = 0
+            v.CanCollide = false
+        end
+    end
+end
 
 local Toggle1 = Section1:CreateToggle("Aimbot", nil, function(State)
     getgenv().AimBot.Enabled = State
