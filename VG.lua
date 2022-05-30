@@ -288,7 +288,7 @@ local GladeDoors = game:GetService("Workspace").Map.Glade.Doors
 local DToggle = Section5:CreateToggle("Doors Enabled", true, function(State)
   if State == true then
     GladeDoors.Parent = game:GetService("Workspace").Map.Glade
-  else
+  elseif State == false then
     GladeDoors.Parent = DarkStorage
   end
 end)
