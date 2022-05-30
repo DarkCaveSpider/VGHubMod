@@ -293,14 +293,14 @@ local DToggle = Section5:CreateToggle("Doors Enabled", true, function(State)
     GladeDoors.Parent = DarkStorage
   end
 end)
-local DToggle = Section5:CreateToggle("Wall Collision", nil, function(State)
+local DToggle = Section5:CreateToggle("Wall Collision", true, function(State)
   getgenv().DWalls = State
   for i, v in pairs(game:GetService("Workspace").Map.Maze:GetDescendants()) do
       if v:IsA("BasePart") and v.BrickColor.Name:match("stone") then
           if getgenv().DWalls then
-            v.CanCollide = false
+              v.CanCollide = false
           else
-            v.CanCollide = true
+              v.CanCollide = true
           end
       end
   end
