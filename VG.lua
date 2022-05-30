@@ -128,12 +128,14 @@ local function getNearestFish()
     local TargetDistance = math.huge
     local Target
     for i, v in ipairs(game:GetService("Workspace").Resources.Glade.Fish:GetChildren()) do
-        if v:FindFirstChild("MouseTarget") and v.Properties.Alive.Value ~= false  then
-            local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
-            if Mag < TargetDistance then
-                TargetDistance = Mag
-                Target = v
-            end
+        if not _G.shit[v.Name] then 
+          if v:FindFirstChild("MouseTarget") and v.Properties.Alive.Value ~= false  then
+              local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
+              if Mag < TargetDistance then
+                  TargetDistance = Mag
+                  Target = v
+              end
+          end
         end
     end
     return Target
@@ -143,12 +145,14 @@ local function getNearestIngredients()
     local TargetDistance = math.huge
     local Target
     for i, v in ipairs(game:GetService("Workspace").Resources.Glade.Ingredients:GetChildren()) do
-        if v:FindFirstChild("MouseTarget") and v.Properties.Alive.Value ~= false  then
-            local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
-            if Mag < TargetDistance then
-                TargetDistance = Mag
-                Target = v
-            end
+        if not _G.shit[v.Name] then 
+          if v:FindFirstChild("MouseTarget") and v.Properties.Alive.Value ~= false  then
+              local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
+              if Mag < TargetDistance then
+                  TargetDistance = Mag
+                  Target = v
+              end
+          end
         end
     end
     return Target
@@ -158,12 +162,14 @@ local function getNearestTrees()
     local TargetDistance = math.huge
     local Target
     for i, v in ipairs(game:GetService("Workspace").Resources.Glade.Trees:GetChildren()) do
-        if v:FindFirstChild("MouseTarget") and v.Properties.Alive.Value ~= false  then
-            local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
-            if Mag < TargetDistance then
-                TargetDistance = Mag
-                Target = v
-            end
+        if not _G.shit[v.Name] then 
+          if v:FindFirstChild("MouseTarget") and v.Properties.Alive.Value ~= false  then
+              local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
+              if Mag < TargetDistance then
+                  TargetDistance = Mag
+                  Target = v
+              end
+          end
         end
     end
     return Target
@@ -173,12 +179,14 @@ local function getNearestOres()
     local TargetDistance = math.huge
     local Target
     for i, v in ipairs(game:GetService("Workspace").Resources.Glade.Ores:GetChildren()) do
-        if v:FindFirstChild("MouseTarget")  and v.Properties.Alive.Value ~= false   then
-            local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
-            if Mag < TargetDistance then
-                TargetDistance = Mag
-                Target = v
-            end
+        if not _G.shit[v.Name] then
+          if v:FindFirstChild("MouseTarget")  and v.Properties.Alive.Value ~= false   then
+              local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
+              if Mag < TargetDistance then
+                  TargetDistance = Mag
+                  Target = v
+              end
+          end
         end
     end
     return Target
@@ -191,12 +199,14 @@ local function getNearestFishMaze()
     local TargetDistance = math.huge
     local Target
     for i, v in ipairs(game:GetService("Workspace").Resources.Maze.Fish:GetChildren()) do
-        if v:FindFirstChild("MouseTarget")  and v.Properties.Alive.Value ~= false  then
-            local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
-            if Mag < TargetDistance then
-                TargetDistance = Mag
-                Target = v
-            end
+        if not _G.shit[v.Name] then 
+          if v:FindFirstChild("MouseTarget")  and v.Properties.Alive.Value ~= false  then
+              local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
+              if Mag < TargetDistance then
+                  TargetDistance = Mag
+                  Target = v
+              end
+          end
         end
     end
     return Target
@@ -206,12 +216,14 @@ local function getNearestIngredientsMaze()
     local TargetDistance = math.huge
     local Target
     for i, v in ipairs(game:GetService("Workspace").Resources.Maze.Ingredients:GetChildren()) do
-        if v:FindFirstChild("MouseTarget")  and v.Properties.Alive.Value ~= false  then
-            local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
-            if Mag < TargetDistance then
-                TargetDistance = Mag
-                Target = v
-            end
+        if not _G.shit[v.Name] then 
+          if v:FindFirstChild("MouseTarget")  and v.Properties.Alive.Value ~= false  then
+              local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
+              if Mag < TargetDistance then
+                  TargetDistance = Mag
+                  Target = v
+              end
+          end
         end
     end
     return Target
@@ -221,12 +233,14 @@ local function getNearestTreesMaze()
     local TargetDistance = math.huge
     local Target
     for i, v in ipairs(game:GetService("Workspace").Resources.Maze.Trees:GetChildren()) do
-        if v:FindFirstChild("MouseTarget") and v.Properties.Alive.Value ~= false  then
-            local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
-            if Mag < TargetDistance then
-                TargetDistance = Mag
-                Target = v
-            end
+        if not _G.shit[v.Name] then 
+          if v:FindFirstChild("MouseTarget") and v.Properties.Alive.Value ~= false  then
+              local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
+              if Mag < TargetDistance then
+                  TargetDistance = Mag
+                  Target = v
+              end
+          end
         end
     end
     return Target
@@ -236,12 +250,14 @@ local function getNearestOresMaze()
     local TargetDistance = math.huge
     local Target
     for i, v in ipairs(game:GetService("Workspace").Resources.Maze.Ores:GetChildren()) do
-        if v:FindFirstChild("MouseTarget")  and v.Properties.Alive.Value ~= false   then
-            local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
-            if Mag < TargetDistance then
-                TargetDistance = Mag
-                Target = v
-            end
+        if not _G.shit[v.Name] then 
+          if v:FindFirstChild("MouseTarget")  and v.Properties.Alive.Value ~= false   then
+              local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
+              if Mag < TargetDistance then
+                  TargetDistance = Mag
+                  Target = v
+              end
+          end
         end
     end
     return Target
