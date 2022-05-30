@@ -298,9 +298,9 @@ local DToggle = Section5:CreateToggle("Wall Collision", true, function(State)
   for i, v in pairs(game:GetService("Workspace").Map.Maze:GetDescendants()) do
       if v:IsA("BasePart") and v.BrickColor.Name:match("stone") then
           if getgenv().DWalls then
-              v.CanCollide = false
-          else
               v.CanCollide = true
+          else
+              v.CanCollide = false
           end
       end
   end
