@@ -305,11 +305,11 @@ local DToggle = Section5:CreateToggle("Wall Collision", true, function(State)
       end
   end
 end)
-local DToggle = Section5:CreateSlider("Invisisble Walls", 0,1,0.5,false, function(State)
+local DToggle = Section5:CreateSlider("Invisisble Walls", 0,100,0,false, function(State)
   getgenv().DWallss = State
   for i, v in pairs(game:GetService("Workspace").Map.Maze:GetDescendants()) do
       if v:IsA("BasePart") and v.BrickColor.Name:match("stone") then
-          v.Transparency = getgenv().DWallss
+          v.Transparency = (getgenv().DWallss)/100
       end
   end
 end)
