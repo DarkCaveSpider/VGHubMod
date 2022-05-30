@@ -304,12 +304,16 @@ local DToggle = Section5:CreateToggle("Wall Collision", true, function(State)
           end
       end
   end
-end)Name, Min, Max, Default, Precise, Callback
-local DToggle = Section5:CreateSlider("Aimbot Radius", 0,10,nil,false, function(State)
+end)
+local DToggle = Section5:CreateToggle("Invisisble Walls", nil, function(State)
   getgenv().DWallss = State
   for i, v in pairs(game:GetService("Workspace").Map.Maze:GetDescendants()) do
       if v:IsA("BasePart") and v.BrickColor.Name:match("stone") then
-          v.Transparency = getgenv().DWallss
+          if getgenv().DWallss then
+              v.Transparency = 1
+          else
+              v.Transparency = 0
+          end
       end
   end
 end)
@@ -320,7 +324,6 @@ end)
 local Toggle1 = Section1:CreateToggle("WallCheck", nil, function(State)
     getgenv().AimBot.WallCheck = State
 end)
-
 local Slider2 = Section1:CreateSlider("Aimbot Radius", 0,1000,nil,false, function(Value)
     getgenv().AimBot.FOV = Value
     Circle.Radius = Value
