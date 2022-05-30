@@ -110,7 +110,7 @@ function GetClosestToCuror()
             end
          end
     return Target
-end 
+end
 
 game:GetService('RunService').Stepped:connect(function()
 
@@ -118,7 +118,7 @@ game:GetService('RunService').Stepped:connect(function()
     ClosestPlayer = GetClosestToCuror()
     if ClosestPlayer then
      workspace.CurrentCamera.CFrame = CFrame.new(workspace.CurrentCamera.CFrame.p,ClosestPlayer.Character.HumanoidRootPart.CFrame.p)
-    end 
+    end
 
 end)
 
@@ -300,13 +300,13 @@ getgenv().Traps = State
 for i, v in pairs(game:GetService("Workspace").Map.Maze:GetDescendants()) do
     if string.match(v.Name, "Trap")  then if getgenv().Traps then
         v:Destroy()
-    end end 
+    end end
 end
 
 game:GetService("Workspace").Map.Maze.DescendantAdded:Connect(function(v)
         if string.match(v.Name, "Trap")  then if getgenv().Traps then
             v:Destroy()
-        end end 
+        end end
     end
 )
 end)
@@ -352,7 +352,7 @@ for i,v in next, Sell do
 Dropdown1:AddOption(v, function(String)
 Sell = String
 end)
-end 
+end
 local Toggle1 = Section1:CreateToggle("Hitbox Extender", nil, function(State)
 HEAD = State
 while HEAD do
@@ -847,6 +847,7 @@ local function esp(v)
             game:GetService('RunService').Stepped:Connect(
             function()
                 if v and v:FindFirstChild("MainPart") then
+                  if not _G.shit[v.Name] then
                     local Vector, Screen = workspace.CurrentCamera:WorldToViewportPoint(v.MainPart.Position)
                     if getgenv().esp and Screen then
                         T.Position = Vector2.new(Vector.X, Vector.Y)
@@ -855,6 +856,7 @@ local function esp(v)
                     else
                         T.Visible = false
                     end
+                  end
                 elseif v:FindFirstChild("MainPart") == nil then
                     T:Remove()
                     Re:disconnect()
@@ -907,6 +909,7 @@ local function esp(v)
             game:GetService('RunService').Stepped:Connect(
             function()
                 if v and v:FindFirstChild("MainPart") then
+                  if not _G.shit[v.Name] then
                     local Vector, Screen = workspace.CurrentCamera:WorldToViewportPoint(v.MainPart.Position)
                     if getgenv().esp1 and Screen then
                         T.Position = Vector2.new(Vector.X, Vector.Y)
@@ -915,6 +918,7 @@ local function esp(v)
                     else
                         T.Visible = false
                     end
+                  end
                 elseif v:FindFirstChild("MainPart") == nil then
                     T:Remove()
                     Re:disconnect()
@@ -967,6 +971,7 @@ local function esp(v)
             game:GetService('RunService').Stepped:Connect(
             function()
                 if v and v:FindFirstChild("MainPart") then
+                  if not _G.shit[v.Name] then
                     local Vector, Screen = workspace.CurrentCamera:WorldToViewportPoint(v.MainPart.Position)
                     if getgenv().esp2 and Screen then
                         T.Position = Vector2.new(Vector.X, Vector.Y)
@@ -975,6 +980,7 @@ local function esp(v)
                     else
                         T.Visible = false
                     end
+                  end
                 elseif v:FindFirstChild("MainPart") == nil then
                     T:Remove()
                     Re:disconnect()
@@ -1028,6 +1034,7 @@ local function esp(v)
             game:GetService('RunService').Stepped:Connect(
             function()
                 if v and v:FindFirstChild("MainPart") then
+                  if not _G.shit[v.Name] then
                     local Vector, Screen = workspace.CurrentCamera:WorldToViewportPoint(v.MainPart.Position)
                     if getgenv().esp3 and Screen then
                         T.Position = Vector2.new(Vector.X, Vector.Y)
@@ -1036,6 +1043,7 @@ local function esp(v)
                     else
                         T.Visible = false
                     end
+                  end
                 elseif v:FindFirstChild("MainPart") == nil then
                     T:Remove()
                     Re:disconnect()
@@ -1308,7 +1316,7 @@ game:service "UserInputService".InputEnded:connect(
         end
     end
 )
-end) 
+end)
 local Button1 = Section2:CreateButton("ServerHop", function()
 local PlaceID = game.PlaceId
 local AllIDs = {}
@@ -1380,7 +1388,7 @@ function Teleport()
 end
 
 -- If you'd like to use a script before server hopping (Like a Automatic Chest collector you can put the Teleport() after it collected everything.
-Teleport() 
+Teleport()
 end)
 local Button1 = Section2:CreateButton("Rejoin", function()
 game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer) end)
