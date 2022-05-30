@@ -268,6 +268,8 @@ function Invis()
 print('cant go invis anymore')
 end
 
+local DarkStorage = Instance.new("Folder", game)
+DarkStorage.Name = "DarkStorage"
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Rcvoreuvi-Ham/VGHubMod/main/imdumb.lua"))()
 local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
@@ -280,9 +282,16 @@ local Section1 = Tab1:CreateSection("")
 local Section2 = Tab1:CreateSection("")
 local Section3 = Tab2:CreateSection("Menu")
 local Section4 = Tab2:CreateSection("Background")
-local Section5 = Tab3:CreateSection("Exclusions")
+local Section5 = Tab3:CreateSection("Walls")
+local Section6 = Tab3:CreateSection("Exclusions")
 
-local ExclusionLabel = Section5:CreateLabel("Exclusions")
+local DToggle = Section5:CreateToggle("Doors Enabled", nil, function(State)
+  if State == true then
+    game:GetService("Workspace").Map.Glade.Doors.Parent = DarkStorage
+  else
+    game:GetService("Workspace").Map.Glade.Doors.Parent = game:GetService("Workspace").Map.Glade
+  end
+end)
 
 local Toggle1 = Section1:CreateToggle("Aimbot", nil, function(State)
     getgenv().AimBot.Enabled = State
