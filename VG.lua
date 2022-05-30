@@ -284,7 +284,7 @@ local Section4 = Tab2:CreateSection("Background")
 local Section5 = Tab3:CreateSection("Walls")
 local Section6 = Tab3:CreateSection("Exclusions")
 
-local DToggle = Section5:CreateToggle("Doors Enabled", nil, function(State)
+local DToggle = Section5:CreateToggle("Doors Enabled", true, function(State)
   if State == true then
     game:GetService("Workspace").Map.Glade.Doors.Parent = DarkStorage
   else
@@ -1333,7 +1333,7 @@ end)
 end)
 local Button1 = Section2:CreateButton("Anti Lag", function()
 for _, v in pairs(game:GetService("Workspace"):GetDescendants()) do
-    if v:IsA("BasePart") and not v.Parent:FindFirstChild("Humanoid") then --- i stole this from the actual game LOL >-<
+    if v:IsA("BasePart") and not v.Parent:FindFirstChild("Humanoid") then --- i stole this from the actual game LOL >-< 
         v.Material = Enum.Material.SmoothPlastic
         if v:IsA("Texture") then
             v:Destroy()
