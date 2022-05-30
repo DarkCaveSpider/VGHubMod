@@ -305,7 +305,7 @@ local DToggle = Section5:CreateToggle("Wall Collision", true, function(State)
       end
   end
 end)Name, Min, Max, Default, Precise, Callback
-local DToggle = Section5:CreateSlider("Wall Transparency", 0, 1, 0, false, function(State)
+local DToggle = Section5:CreateSlider("Aimbot Radius", 0,10,nil,false, function(State)
   getgenv().DWallss = State
   for i, v in pairs(game:GetService("Workspace").Map.Maze:GetDescendants()) do
       if v:IsA("BasePart") and v.BrickColor.Name:match("stone") then
