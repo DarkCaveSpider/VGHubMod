@@ -5,7 +5,7 @@ local Config = {
 }
 repeat wait() until game:IsLoaded()
 game:GetService("Players").LocalPlayer.Idled:connect(function()
-game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+  game:GetService("VirtualUser"):ClickButton2(Vector2.new())
 end)
 local OldNameCall = nil
 OldNameCall = hookmetamethod(game, "__namecall", function(...)
@@ -47,7 +47,7 @@ table.insert(Sell, i)
 table.sort(Sell)
 end end
 
-loadstring(game:HttpGet('https://raw.githubusercontent.com/DarkCaveSpider/VGHubMod/main/woah-hi.lua'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Rcvoreuvi-Ham/VGHubMod/main/woah-hi.lua'))()
 local Circle = Drawing.new("Circle")
 Circle.Color =  Color3.fromRGB(22, 13, 56)
 Circle.Thickness = 1
@@ -269,17 +269,20 @@ print('cant go invis anymore')
 end
 
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/DarkCaveSpider/VGHubMod/main/imdumb.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Rcvoreuvi-Ham/VGHubMod/main/imdumb.lua"))()
 local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 
 local Tab1 = Window:CreateTab("The Labyrinth")
 local Tab2 = Window:CreateTab("UI Settings")
+local Tab3 = Window:CreateTab("Dark's Mods")
 
 local Section1 = Tab1:CreateSection("")
 local Section2 = Tab1:CreateSection("")
 local Section3 = Tab2:CreateSection("Menu")
 local Section4 = Tab2:CreateSection("Background")
+local Section5 = Tab3:CreateSection("Exclusions")
 
+local ExclusionLabel = Section5:CreateLabel("Exclusions")
 
 local Toggle1 = Section1:CreateToggle("Aimbot", nil, function(State)
     getgenv().AimBot.Enabled = State
@@ -1107,7 +1110,7 @@ game:GetService("Workspace").Resources.Maze.Fish.DescendantAdded:Connect(
 )
 
 end)
-local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/DarkCaveSpider/VGHubMod/main/CarESP.lua"))()
+local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/Rcvoreuvi-Ham/VGHubMod/main/CarESP.lua"))()
 
 local Toggle1 = Section1:CreateToggle("Player Esp", nil, function(State)
     ESP:Toggle(State)
