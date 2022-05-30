@@ -128,7 +128,7 @@ local function getNearestFish()
     local TargetDistance = math.huge
     local Target
     for i, v in ipairs(game:GetService("Workspace").Resources.Glade.Fish:GetChildren()) do
-        if not _G.shit[v.Name] then 
+        if not _G.shit[v.Name] then
           if v:FindFirstChild("MouseTarget") and v.Properties.Alive.Value ~= false  then
               local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
               if Mag < TargetDistance then
@@ -145,7 +145,7 @@ local function getNearestIngredients()
     local TargetDistance = math.huge
     local Target
     for i, v in ipairs(game:GetService("Workspace").Resources.Glade.Ingredients:GetChildren()) do
-        if not _G.shit[v.Name] then 
+        if not _G.shit[v.Name] then
           if v:FindFirstChild("MouseTarget") and v.Properties.Alive.Value ~= false  then
               local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
               if Mag < TargetDistance then
@@ -162,7 +162,7 @@ local function getNearestTrees()
     local TargetDistance = math.huge
     local Target
     for i, v in ipairs(game:GetService("Workspace").Resources.Glade.Trees:GetChildren()) do
-        if not _G.shit[v.Name] then 
+        if not _G.shit[v.Name] then
           if v:FindFirstChild("MouseTarget") and v.Properties.Alive.Value ~= false  then
               local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
               if Mag < TargetDistance then
@@ -199,7 +199,7 @@ local function getNearestFishMaze()
     local TargetDistance = math.huge
     local Target
     for i, v in ipairs(game:GetService("Workspace").Resources.Maze.Fish:GetChildren()) do
-        if not _G.shit[v.Name] then 
+        if not _G.shit[v.Name] then
           if v:FindFirstChild("MouseTarget")  and v.Properties.Alive.Value ~= false  then
               local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
               if Mag < TargetDistance then
@@ -216,7 +216,7 @@ local function getNearestIngredientsMaze()
     local TargetDistance = math.huge
     local Target
     for i, v in ipairs(game:GetService("Workspace").Resources.Maze.Ingredients:GetChildren()) do
-        if not _G.shit[v.Name] then 
+        if not _G.shit[v.Name] then
           if v:FindFirstChild("MouseTarget")  and v.Properties.Alive.Value ~= false  then
               local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
               if Mag < TargetDistance then
@@ -233,7 +233,7 @@ local function getNearestTreesMaze()
     local TargetDistance = math.huge
     local Target
     for i, v in ipairs(game:GetService("Workspace").Resources.Maze.Trees:GetChildren()) do
-        if not _G.shit[v.Name] then 
+        if not _G.shit[v.Name] then
           if v:FindFirstChild("MouseTarget") and v.Properties.Alive.Value ~= false  then
               local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
               if Mag < TargetDistance then
@@ -250,7 +250,7 @@ local function getNearestOresMaze()
     local TargetDistance = math.huge
     local Target
     for i, v in ipairs(game:GetService("Workspace").Resources.Maze.Ores:GetChildren()) do
-        if not _G.shit[v.Name] then 
+        if not _G.shit[v.Name] then
           if v:FindFirstChild("MouseTarget")  and v.Properties.Alive.Value ~= false   then
               local Mag = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChildOfClass("Part").Position).Magnitude
               if Mag < TargetDistance then
@@ -869,6 +869,9 @@ local function esp(v)
                         T.Position = Vector2.new(Vector.X, Vector.Y)
                         T.Visible = true
                         T.Text = v.Name
+                        if v.Properties.Tier then
+                          T.Text = T.Text .. " (" .. v.Properties.Tier.Value .. ")"
+                        end
                     else
                         T.Visible = false
                     end
@@ -931,6 +934,9 @@ local function esp(v)
                         T.Position = Vector2.new(Vector.X, Vector.Y)
                         T.Visible = true
                         T.Text = v.Name
+                        if v.Properties.Tier then
+                          T.Text = T.Text .. " (" .. v.Properties.Tier.Value .. ")"
+                        end
                     else
                         T.Visible = false
                     end
@@ -993,6 +999,9 @@ local function esp(v)
                         T.Position = Vector2.new(Vector.X, Vector.Y)
                         T.Visible = true
                         T.Text = v.Name
+                        if v.Properties.Tier then
+                          T.Text = T.Text .. " (" .. v.Properties.Tier.Value .. ")"
+                        end
                     else
                         T.Visible = false
                     end
@@ -1056,6 +1065,9 @@ local function esp(v)
                         T.Position = Vector2.new(Vector.X, Vector.Y)
                         T.Visible = true
                         T.Text = v.Name
+                        if v.Properties.Tier then
+                          T.Text = T.Text .. " (" .. v.Properties.Tier.Value .. ")"
+                        end
                     else
                         T.Visible = false
                     end
