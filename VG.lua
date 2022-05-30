@@ -317,17 +317,6 @@ local DToggle = Section5:CreateToggle("Invisisble Walls", nil, function(State)
       end
   end
 end)
-for i, v in pairs(game:GetService("Workspace").Map.Maze:GetDescendants()) do
-    if v:IsA("BasePart") and v.BrickColor.Name:match("stone") then
-        if getgenv().Trapss then
-            v.Transparency = 1
-            v.CanCollide = false
-        else
-            v.Transparency = 0
-            v.CanCollide = false
-        end
-    end
-end
 
 local Toggle1 = Section1:CreateToggle("Aimbot", nil, function(State)
     getgenv().AimBot.Enabled = State
