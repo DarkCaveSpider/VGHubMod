@@ -468,17 +468,7 @@ while getgenv().Tween1 do
                     wait(2)
                 end
             until getNearestOres():FindFirstChild("MouseTarget").HP
-            local Time =
-                (getNearestOres():FindFirstChild("Rock").CFrame.p -
-                game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0,10,0)).magnitude / speed
-            local Info = TweenInfo.new(Time, Enum.EasingStyle.Linear)
-            local Tween =
-                game:GetService("TweenService"):Create(
-                game.Players.LocalPlayer.Character.HumanoidRootPart,
-                Info,
-                {CFrame = CFrame.new(getNearestOres():FindFirstChild("Rock").CFrame.p + Vector3.new(0,10,0))}
-            )
-            Tween:Play()
+
             repeat
                 wait()
                 if getNearestOres().MouseTarget:FindFirstChild("HP") then
@@ -706,17 +696,7 @@ while getgenv().Twee do
                     wait(2)
                 end
             until getNearestOresMaze():FindFirstChild("MouseTarget").HP
-            local Time =
-                (getNearestOresMaze():FindFirstChild("Rock").CFrame.p -
-                game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0,10,0)).magnitude / speed
-            local Info = TweenInfo.new(Time, Enum.EasingStyle.Linear)
-            local Tween =
-                game:GetService("TweenService"):Create(
-                game.Players.LocalPlayer.Character.HumanoidRootPart,
-                Info,
-                {CFrame = CFrame.new(getNearestOresMaze():FindFirstChild("Rock").CFrame.p + Vector3.new(0,10,0))}
-            )
-            Tween:Play()
+
             repeat
                 wait()
                 if getNearestOresMaze().MouseTarget:FindFirstChild("HP") then
