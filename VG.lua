@@ -434,7 +434,7 @@ end)
 local Toggle1 = Section2:CreateToggle("AutoFarm Ore", nil, function(State)
 getgenv().Tween1 = State
 
-speed = 15
+speed = 20
 ----------------
 
 game:GetService("RunService").Stepped:connect(
@@ -484,7 +484,7 @@ end)
 local Toggle1 = Section2:CreateToggle("AutoFarm Trees", nil, function(State)
 getgenv().Tween = State
 
-speed = 14
+speed = 20
 ----------------
 
 Invis()
@@ -541,7 +541,7 @@ end)
 local Toggle1 = Section2:CreateToggle("AutoFarm Ingredients", nil, function(State)
 getgenv().Tween2 = State
 
-speed = 15
+speed = 20
 ----------------
 game:GetService("RunService").Stepped:connect(
     function()
@@ -598,7 +598,7 @@ end)
 local Toggle1 = Section2:CreateToggle("Auto Fish", nil, function(State)
 getgenv().Tween3 = State
 
-speed = 15
+speed = 20
 ----------------
 game:GetService("RunService").Stepped:connect(
     function()
@@ -655,7 +655,7 @@ end)
 local Toggle1 = Section2:CreateToggle("AutoFarm Ore Maze", nil, function(State)
 getgenv().Twee = State
 
-speed = 15
+speed = 20
 ----------------
 Invis()
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
@@ -712,7 +712,7 @@ end)
 local Toggle1 = Section2:CreateToggle("AutoFarm Trees Maze", nil, function(State)
 getgenv().Twe = State
 
-speed = 15
+speed = 20
 ----------------
 
 Invis()
@@ -769,7 +769,7 @@ end)
 local Toggle1 = Section2:CreateToggle("AutoFarm Ingredients Maze", nil, function(State)
 getgenv().Twee2 = State
 
-speed = 15
+speed = 20
 ----------------
 game:GetService("RunService").Stepped:connect(
     function()
@@ -826,7 +826,7 @@ end)
 local Toggle1 = Section2:CreateToggle("Auto Fish", nil, function(State)
 getgenv().T = State
 
-speed = 15
+speed = 20
 ----------------
 game:GetService("RunService").Stepped:connect(
     function()
