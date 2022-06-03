@@ -313,6 +313,21 @@ local DToggle = Section5:CreateSlider("Invisisble Walls", 0,100,0,false, functio
       end
   end
 end)
+local DToggle = Section5:CreateToggle("Anti DMG", nil, function(State)
+  getgenv().damages = State
+  if getgenv().damages then
+    for i, v in pairs(game:GetService("Workspace").Map.Maze:GetDescendants()) do
+      if v:IsA("TouchTransmitter") then
+        v:Destroy()
+      end
+    end
+    game:GetService("Workspace").Map.Maze.DescendantAdded:Connect(function(v)
+      if v:IsA("TouchTransmitter") then
+        v:Destroy()
+      end
+    end)
+  end
+end
 
 local Toggle1 = Section1:CreateToggle("Aimbot", nil, function(State)
     getgenv().AimBot.Enabled = State
