@@ -319,7 +319,7 @@ spawn(function()
  for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
    if v:IsA("TouchTransmitter") then
      if getgenv().Trapss then
-       v.Parent:Destroy()
+       v:Destroy()
        print("DESTROYED INSTANCE") --test print
      end
    end
@@ -327,7 +327,7 @@ spawn(function()
  game:GetService("Workspace").DescendantAdded:Connect(function(v)
    if v:IsA("TouchTransmitter") then
      if getgenv().Trapss then
-       v.Parent:Destroy()
+       v:Destroy()
        print("DESTROYED INSTANCE") --test print
      end
    end
