@@ -314,25 +314,30 @@ local DToggle = Section5:CreateSlider("Invisisble Walls", 0,100,0,false, functio
   end
 end)
 local DToggle2 = Section5:CreateToggle("Anti DMG", nil, function(State)
-spawn(function()
- getgenv().Trapss = State
- for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
-   if v:IsA("TouchTransmitter") then
-     if getgenv().Trapss then
-       v:Destroy()
-       print("DESTROYED INSTANCE") --test print
-     end
-   end
- end
- game:GetService("Workspace").DescendantAdded:Connect(function(v)
-   if v:IsA("TouchTransmitter") then
-     if getgenv().Trapss then
-       v:Destroy()
-       print("DESTROYED INSTANCE") --test print
-     end
-   end
- end)
-end)
+for i=1,5 do
+  for i, v in pairs(game:GetService("Workspace").Map.Maze:GetDescendants()) do
+    if v:IsA("TouchTransmitter") then
+
+        pcall(
+            function()
+                v.Parent:Destroy()
+            end
+        )
+        print(v.Parent)
+    end
+end
+end
+game:GetService("Workspace").Map.Maze.DescendantAdded:Connect(
+    function(v)
+        if v:IsA("TouchTransmitter") then
+            pcall(
+                function()
+                    v.Parent:Destroy()
+                end
+            )
+        end
+    end
+)
 end)
 
 
