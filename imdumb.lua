@@ -52,6 +52,12 @@ function Library:CreateWindow(Config, Parent)
 	Screen.Name =  HttpService:GenerateGUID(false)
 	Screen.Parent = Parent
 	Topbar.WindowName.Text = Config.WindowName
+	
+	UserInputService.InputEnded:Connect(function(Input)
+		if Input.KeyCode == Config.Keybind then
+			Screen.Enabled = not Screen.Enabled
+		end
+	end)
 
 	MakeDraggable(Topbar,Main)
 	local function CloseAll()
